@@ -1,28 +1,23 @@
--- Synapse X Remake made by @Synaptics Team (yt)
+--[[Setting Executor and Identity Values]]--
+function identifyexecutor() return 'Synaptics', 'Beta' end
+function getexecutorname() return identifyexecutor() end
+function executorname() return identifyexecutor() end
+function executorversion() return select(identifyexecutor(), 2) end
+function getexecutorversion() return executorversion() end
+function printidentity() print("Current identity is 8") return end
+function getthreadidentity() return '8' end
+function getthreadcontext() return getthreadidentity() end
 
-local synversion = "April Fools!"
-
--- this shit function makes my script fucked
---[[pcall(function()
-    local HttpService = game:GetService("HttpService")
-    local response = game:HttpGet("https://api.whatexploitsare.online/status")
-    local data = HttpService:JSONDecode(response)
-
-    for _, item in pairs(data) do
-        if item.Synapse then
-            synversion = item.Synapse.exploit_version
-	end
-    end
-end)]]
+local synversion = "1.0.0"
 
 -- Instances: 150 | Scripts: 8 | Modules: 4
 local G2L = {};
--- StarterGui.SynapseX
+-- StarterGui.Synaptics
 G2L["1"] = Instance.new("ScreenGui", game:GetService("CoreGui"));
-G2L["1"]["Name"] = [[SynapseX]];
+G2L["1"]["Name"] = [[Synaptics]];
 G2L["1"]["ResetOnSpawn"] = false;
 
--- StarterGui.SynapseX.FloatingIcon
+-- StarterGui.Synaptics.FloatingIcon
 G2L["2"] = Instance.new("ImageButton", G2L["1"]);
 G2L["2"]["BackgroundColor3"] = Color3.fromRGB(61, 61, 61);
 G2L["2"]["Size"] = UDim2.new(0, 36, 0, 36);
@@ -30,7 +25,7 @@ G2L["2"]["Name"] = [[FloatingIcon]];
 G2L["2"].Visible = false
 G2L["2"]["Position"] = UDim2.new(0.7019911956787109, 0, 0.7092568278312683, 0);
 
--- StarterGui.SynapseX.FloatingIcon. 
+-- StarterGui.Synaptics.FloatingIcon. 
 G2L["3"] = Instance.new("ImageLabel", G2L["2"]);
 G2L["3"]["BorderSizePixel"] = 0;
 G2L["3"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
@@ -40,15 +35,15 @@ G2L["3"]["Name"] = [[ ]];
 G2L["3"]["BackgroundTransparency"] = 1;
 G2L["3"]["Position"] = UDim2.new(0.16640418767929077, 0, 0.13268542289733887, 0);
 
--- StarterGui.SynapseX.FloatingIcon.UICorner
+-- StarterGui.Synaptics.FloatingIcon.UICorner
 G2L["4"] = Instance.new("UICorner", G2L["2"]);
 G2L["4"]["CornerRadius"] = UDim.new(1, 8);
 
--- StarterGui.SynapseX.FloatingIcon.UIGradient
+-- StarterGui.Synaptics.FloatingIcon.UIGradient
 G2L["5"] = Instance.new("UIGradient", G2L["2"]);
 G2L["5"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(255, 255, 255)),ColorSequenceKeypoint.new(0.720, Color3.fromRGB(0, 0, 0)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 0, 0))};
 
--- StarterGui.SynapseX.Main
+-- StarterGui.Synaptics.Main
 G2L["6"] = Instance.new("Frame", G2L["1"]);
 G2L["6"]["Active"] = true;
 G2L["6"]["ZIndex"] = 4;
@@ -59,7 +54,7 @@ G2L["6"]["Size"] = UDim2.new(0, 646, 0, 283);
 G2L["6"]["Position"] = UDim2.new(0, 19, 0, 23);
 G2L["6"]["Name"] = [[Main]];
 
--- StarterGui.SynapseX.Main.Icon
+-- StarterGui.Synaptics.Main.Icon
 G2L["7"] = Instance.new("ImageLabel", G2L["6"]);
 G2L["7"]["BorderSizePixel"] = 0;
 G2L["7"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
@@ -69,7 +64,7 @@ G2L["7"]["Name"] = [[Icon]];
 G2L["7"]["BackgroundTransparency"] = 1;
 G2L["7"]["Position"] = UDim2.new(0, 5, 0, 0);
 
--- StarterGui.SynapseX.Main.Background
+-- StarterGui.Synaptics.Main.Background
 G2L["8"] = Instance.new("ImageLabel", G2L["6"]);
 G2L["8"]["ZIndex"] = 0;
 G2L["8"]["BorderSizePixel"] = 0;
@@ -79,7 +74,7 @@ G2L["8"]["TileSize"] = UDim2.new(0, 25, 0, 25);
 G2L["8"]["Size"] = UDim2.new(0, 647, 0, 283);
 G2L["8"]["Name"] = [[Background]];
 
--- StarterGui.SynapseX.Main.Panel
+-- StarterGui.Synaptics.Main.Panel
 G2L["9"] = Instance.new("Frame", G2L["6"]);
 G2L["9"]["ZIndex"] = 0;
 G2L["9"]["BorderSizePixel"] = 0;
@@ -88,18 +83,18 @@ G2L["9"]["Size"] = UDim2.new(0, 647, 0, 27);
 G2L["9"]["BorderColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["9"]["Name"] = [[Panel]];
 
--- StarterGui.SynapseX.Main.MainFunc
+-- StarterGui.Synaptics.Main.MainFunc
 G2L["a"] = Instance.new("Frame", G2L["6"]);
 G2L["a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["a"]["BackgroundTransparency"] = 1;
 G2L["a"]["Size"] = UDim2.new(0, 100, 0, 100);
 G2L["a"]["Name"] = [[MainFunc]];
 
--- StarterGui.SynapseX.Main.MainFunc.Needs
+-- StarterGui.Synaptics.Main.MainFunc.Needs
 G2L["b"] = Instance.new("Folder", G2L["a"]);
 G2L["b"]["Name"] = [[Needs]];
 
--- StarterGui.SynapseX.Main.MainFunc.Needs.Tab
+-- StarterGui.Synaptics.Main.MainFunc.Needs.Tab
 G2L["c"] = Instance.new("TextButton", G2L["b"]);
 G2L["c"]["ZIndex"] = 0;
 G2L["c"]["BorderSizePixel"] = 0;
@@ -115,7 +110,7 @@ G2L["c"]["Text"] = [[  Script 1]];
 G2L["c"]["Position"] = UDim2.new(-0.0003878306597471237, 0, -0.011710520833730698, 0);
 G2L["c"]["BackgroundTransparency"] = 0.10000000149011612;
 
--- StarterGui.SynapseX.Main.MainFunc.Needs.Tab.Remove
+-- StarterGui.Synaptics.Main.MainFunc.Needs.Tab.Remove
 G2L["d"] = Instance.new("TextButton", G2L["c"]);
 G2L["d"]["BorderSizePixel"] = 0;
 G2L["d"]["TextXAlignment"] = Enum.TextXAlignment.Left;
@@ -130,7 +125,7 @@ G2L["d"]["Text"] = [[x]];
 G2L["d"]["Position"] = UDim2.new(0, 46, 0, 2);
 G2L["d"]["BackgroundTransparency"] = 1;
 
--- StarterGui.SynapseX.Main.MainFunc.Needs.ScriptHubButton
+-- StarterGui.Synaptics.Main.MainFunc.Needs.ScriptHubButton
 G2L["e"] = Instance.new("TextButton", G2L["b"]);
 G2L["e"]["ZIndex"] = 3;
 G2L["e"]["TextXAlignment"] = Enum.TextXAlignment.Left;
@@ -146,7 +141,7 @@ G2L["e"]["Text"] = [[test.lua]];
 G2L["e"]["AutomaticSize"] = Enum.AutomaticSize.X;
 G2L["e"]["Position"] = UDim2.new(0.039603959769010544, 0, 0, 0);
 
--- StarterGui.SynapseX.Main.MainFunc.Needs.Textbox
+-- StarterGui.Synaptics.Main.MainFunc.Needs.Textbox
 G2L["f"] = Instance.new("ScrollingFrame", G2L["b"]);
 G2L["f"]["Active"] = true;
 G2L["f"]["BorderSizePixel"] = 0;
@@ -158,7 +153,7 @@ G2L["f"]["Position"] = UDim2.new(0.05999999865889549, 0, 0.48061829805374146, 0)
 G2L["f"]["Visible"] = false;
 G2L["f"]["Name"] = [[Textbox]];
 
--- StarterGui.SynapseX.Main.MainFunc.Needs.Textbox.Frame
+-- StarterGui.Synaptics.Main.MainFunc.Needs.Textbox.Frame
 G2L["10"] = Instance.new("Frame", G2L["f"]);
 G2L["10"]["Active"] = true;
 G2L["10"]["BorderSizePixel"] = 0;
@@ -169,7 +164,7 @@ G2L["10"]["ClipsDescendants"] = true;
 G2L["10"]["AutomaticSize"] = Enum.AutomaticSize.XY;
 G2L["10"]["SelectionGroup"] = true;
 
--- StarterGui.SynapseX.Main.MainFunc.Needs.Textbox.Frame.Textbox
+-- StarterGui.Synaptics.Main.MainFunc.Needs.Textbox.Frame.Textbox
 G2L["11"] = Instance.new("TextBox", G2L["10"]);
 G2L["11"]["ZIndex"] = 4;
 G2L["11"]["BorderSizePixel"] = 0;
@@ -188,7 +183,7 @@ G2L["11"]["AutomaticSize"] = Enum.AutomaticSize.XY;
 G2L["11"]["Name"] = [[Textbox]];
 G2L["11"]["ClearTextOnFocus"] = false;
 
--- StarterGui.SynapseX.Main.MainFunc.Needs.Textbox.Frame.Linebar
+-- StarterGui.Synaptics.Main.MainFunc.Needs.Textbox.Frame.Linebar
 G2L["12"] = Instance.new("Frame", G2L["10"]);
 G2L["12"]["ZIndex"] = 2;
 G2L["12"]["BorderSizePixel"] = 0;
@@ -196,7 +191,7 @@ G2L["12"]["BackgroundColor3"] = Color3.fromRGB(36, 36, 36);
 G2L["12"]["Size"] = UDim2.new(0, 32, 1, 0);
 G2L["12"]["Name"] = [[Linebar]];
 
--- StarterGui.SynapseX.Main.MainFunc.Needs.Textbox.Frame.Linebar.LineText
+-- StarterGui.Synaptics.Main.MainFunc.Needs.Textbox.Frame.Linebar.LineText
 G2L["13"] = Instance.new("TextLabel", G2L["12"]);
 G2L["13"]["ZIndex"] = 5;
 G2L["13"]["TextYAlignment"] = Enum.TextYAlignment.Top;
@@ -210,7 +205,7 @@ G2L["13"]["Text"] = [[1]];
 G2L["13"]["Name"] = [[LineText]];
 G2L["13"]["BackgroundTransparency"] = 1;
 
--- StarterGui.SynapseX.Main.MainFunc.Needs.Textbox.Frame.Highlighted
+-- StarterGui.Synaptics.Main.MainFunc.Needs.Textbox.Frame.Highlighted
 G2L["14"] = Instance.new("Frame", G2L["10"]);
 G2L["14"]["ZIndex"] = 5;
 G2L["14"]["BorderSizePixel"] = 0;
@@ -221,7 +216,7 @@ G2L["14"]["Position"] = UDim2.new(0, -44, 0, 0);
 G2L["14"]["AutomaticSize"] = Enum.AutomaticSize.X;
 G2L["14"]["Name"] = [[Highlighted]];
 
--- StarterGui.SynapseX.Main.MainFunc.Needs.Textbox.Frame.Highlighted.LineText
+-- StarterGui.Synaptics.Main.MainFunc.Needs.Textbox.Frame.Highlighted.LineText
 G2L["15"] = Instance.new("TextLabel", G2L["14"]);
 G2L["15"]["ZIndex"] = 5;
 G2L["15"]["TextYAlignment"] = Enum.TextYAlignment.Top;
@@ -237,11 +232,11 @@ G2L["15"]["Name"] = [[LineText]];
 G2L["15"]["Visible"] = false;
 G2L["15"]["BackgroundTransparency"] = 1;
 
--- StarterGui.SynapseX.Main.MainFunc.Textboxes
+-- StarterGui.Synaptics.Main.MainFunc.Textboxes
 G2L["16"] = Instance.new("Folder", G2L["a"]);
 G2L["16"]["Name"] = [[Textboxes]];
 
--- StarterGui.SynapseX.Main.MainFunc.ScriptHub
+-- StarterGui.Synaptics.Main.MainFunc.ScriptHub
 G2L["17"] = Instance.new("ScrollingFrame", G2L["a"]);
 G2L["17"]["Active"] = true;
 G2L["17"]["ZIndex"] = 2;
@@ -253,15 +248,15 @@ G2L["17"]["BorderColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["17"]["Position"] = UDim2.new(5.420000076293945, 0, 0.30000001192092896, 0);
 G2L["17"]["Name"] = [[ScriptHub]];
 
--- StarterGui.SynapseX.Main.MainFunc.ScriptHub.UIListLayout
+-- StarterGui.Synaptics.Main.MainFunc.ScriptHub.UIListLayout
 G2L["18"] = Instance.new("UIListLayout", G2L["17"]);
 G2L["18"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
 
--- StarterGui.SynapseX.Main.MainFunc.ScriptHub.UIPadding
+-- StarterGui.Synaptics.Main.MainFunc.ScriptHub.UIPadding
 G2L["19"] = Instance.new("UIPadding", G2L["17"]);
 G2L["19"]["PaddingLeft"] = UDim.new(0.05000000074505806, 0);
 
--- StarterGui.SynapseX.Main.Maximize
+-- StarterGui.Synaptics.Main.Maximize
 G2L["1a"] = Instance.new("ImageButton", G2L["6"]);
 G2L["1a"]["BorderSizePixel"] = 0;
 G2L["1a"]["BackgroundColor3"] = Color3.fromRGB(61, 61, 61);
@@ -270,7 +265,7 @@ G2L["1a"]["Name"] = [[Maximize]];
 G2L["1a"]["BorderColor3"] = Color3.fromRGB(99, 150, 182);
 G2L["1a"]["Position"] = UDim2.new(0, 606, 0, 2);
 
--- StarterGui.SynapseX.Main.Maximize.NameText
+-- StarterGui.Synaptics.Main.Maximize.NameText
 G2L["1b"] = Instance.new("TextLabel", G2L["1a"]);
 G2L["1b"]["TextWrapped"] = true;
 G2L["1b"]["ZIndex"] = 2;
@@ -284,7 +279,7 @@ G2L["1b"]["Text"] = [[M]];
 G2L["1b"]["Name"] = [[NameText]];
 G2L["1b"]["BackgroundTransparency"] = 1;
 
--- StarterGui.SynapseX.Main.Maximize.ImageButton
+-- StarterGui.Synaptics.Main.Maximize.ImageButton
 G2L["1c"] = Instance.new("ImageButton", G2L["1a"]);
 G2L["1c"]["BackgroundColor3"] = Color3.fromRGB(0, 55, 81);
 G2L["1c"]["Size"] = UDim2.new(0, 15, 0, 15);
@@ -292,11 +287,11 @@ G2L["1c"]["BorderColor3"] = Color3.fromRGB(99, 150, 182);
 G2L["1c"]["Visible"] = false;
 G2L["1c"]["BackgroundTransparency"] = 0.6000000238418579;
 
--- StarterGui.SynapseX.Main.Maximize.UICorner
+-- StarterGui.Synaptics.Main.Maximize.UICorner
 G2L["1d"] = Instance.new("UICorner", G2L["1a"]);
 G2L["1d"]["CornerRadius"] = UDim.new(0, 0);
 
--- StarterGui.SynapseX.Main.TitleSynapse
+-- StarterGui.Synaptics.Main.TitleSynaptics
 G2L["1e"] = Instance.new("TextLabel", G2L["6"]);
 G2L["1e"]["BorderSizePixel"] = 0;
 G2L["1e"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
@@ -304,11 +299,11 @@ G2L["1e"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]
 G2L["1e"]["TextSize"] = 15;
 G2L["1e"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["1e"]["Size"] = UDim2.new(0, 646, 0, 27);
-G2L["1e"]["Text"] = "Synapse X - "..synversion;
-G2L["1e"]["Name"] = [[TitleSynapse]];
+G2L["1e"]["Text"] = "Synaptics - "..synversion;
+G2L["1e"]["Name"] = [[TitleSynaptics]];
 G2L["1e"]["BackgroundTransparency"] = 1;
 
--- StarterGui.SynapseX.Main.ScriptHub
+-- StarterGui.Synaptics.Main.ScriptHub
 G2L["1f"] = Instance.new("ImageButton", G2L["6"]);
 G2L["1f"]["BorderSizePixel"] = 0;
 G2L["1f"]["BackgroundColor3"] = Color3.fromRGB(61, 61, 61);
@@ -317,7 +312,7 @@ G2L["1f"]["Name"] = [[ScriptHub]];
 G2L["1f"]["BorderColor3"] = Color3.fromRGB(99, 150, 182);
 G2L["1f"]["Position"] = UDim2.new(0, 560, 0, 250);
 
--- StarterGui.SynapseX.Main.ScriptHub.NameText
+-- StarterGui.Synaptics.Main.ScriptHub.NameText
 G2L["20"] = Instance.new("TextLabel", G2L["1f"]);
 G2L["20"]["TextWrapped"] = true;
 G2L["20"]["ZIndex"] = 2;
@@ -332,7 +327,7 @@ G2L["20"]["Text"] = [[Script Hub]];
 G2L["20"]["Name"] = [[NameText]];
 G2L["20"]["BackgroundTransparency"] = 1;
 
--- StarterGui.SynapseX.Main.ScriptHub.ImageButton
+-- StarterGui.Synaptics.Main.ScriptHub.ImageButton
 G2L["21"] = Instance.new("ImageButton", G2L["1f"]);
 G2L["21"]["BackgroundColor3"] = Color3.fromRGB(0, 55, 81);
 G2L["21"]["Size"] = UDim2.new(0, 82, 0, 27);
@@ -340,11 +335,11 @@ G2L["21"]["BorderColor3"] = Color3.fromRGB(99, 150, 182);
 G2L["21"]["Visible"] = false;
 G2L["21"]["BackgroundTransparency"] = 0.6000000238418579;
 
--- StarterGui.SynapseX.Main.ScriptHub.UICorner
+-- StarterGui.Synaptics.Main.ScriptHub.UICorner
 G2L["22"] = Instance.new("UICorner", G2L["1f"]);
 G2L["22"]["CornerRadius"] = UDim.new(0, 0);
 
--- StarterGui.SynapseX.Main.Options
+-- StarterGui.Synaptics.Main.Options
 G2L["23"] = Instance.new("ImageButton", G2L["6"]);
 G2L["23"]["BorderSizePixel"] = 0;
 G2L["23"]["BackgroundColor3"] = Color3.fromRGB(61, 61, 61);
@@ -353,7 +348,7 @@ G2L["23"]["Name"] = [[Options]];
 G2L["23"]["BorderColor3"] = Color3.fromRGB(99, 150, 182);
 G2L["23"]["Position"] = UDim2.new(0, 352, 0, 250);
 
--- StarterGui.SynapseX.Main.Options.NameText
+-- StarterGui.Synaptics.Main.Options.NameText
 G2L["24"] = Instance.new("TextLabel", G2L["23"]);
 G2L["24"]["TextWrapped"] = true;
 G2L["24"]["ZIndex"] = 2;
@@ -368,7 +363,7 @@ G2L["24"]["Text"] = [[Options]];
 G2L["24"]["Name"] = [[NameText]];
 G2L["24"]["BackgroundTransparency"] = 1;
 
--- StarterGui.SynapseX.Main.Options.ImageButton
+-- StarterGui.Synaptics.Main.Options.ImageButton
 G2L["25"] = Instance.new("ImageButton", G2L["23"]);
 G2L["25"]["BackgroundColor3"] = Color3.fromRGB(0, 55, 81);
 G2L["25"]["Size"] = UDim2.new(0, 82, 0, 27);
@@ -376,11 +371,11 @@ G2L["25"]["BorderColor3"] = Color3.fromRGB(99, 150, 182);
 G2L["25"]["Visible"] = false;
 G2L["25"]["BackgroundTransparency"] = 0.6000000238418579;
 
--- StarterGui.SynapseX.Main.Options.UICorner
+-- StarterGui.Synaptics.Main.Options.UICorner
 G2L["26"] = Instance.new("UICorner", G2L["23"]);
 G2L["26"]["CornerRadius"] = UDim.new(0, 0);
 
--- StarterGui.SynapseX.Main.Minimize
+-- StarterGui.Synaptics.Main.Minimize
 G2L["27"] = Instance.new("ImageButton", G2L["6"]);
 G2L["27"]["BorderSizePixel"] = 0;
 G2L["27"]["BackgroundColor3"] = Color3.fromRGB(61, 61, 61);
@@ -389,7 +384,7 @@ G2L["27"]["Name"] = [[Minimize]];
 G2L["27"]["BorderColor3"] = Color3.fromRGB(99, 150, 182);
 G2L["27"]["Position"] = UDim2.new(0, 582, 0, 2);
 
--- StarterGui.SynapseX.Main.Minimize.NameText
+-- StarterGui.Synaptics.Main.Minimize.NameText
 G2L["28"] = Instance.new("TextLabel", G2L["27"]);
 G2L["28"]["TextWrapped"] = true;
 G2L["28"]["ZIndex"] = 2;
@@ -403,7 +398,7 @@ G2L["28"]["Text"] = [[_]];
 G2L["28"]["Name"] = [[NameText]];
 G2L["28"]["BackgroundTransparency"] = 1;
 
--- StarterGui.SynapseX.Main.Minimize.ImageButton
+-- StarterGui.Synaptics.Main.Minimize.ImageButton
 G2L["29"] = Instance.new("ImageButton", G2L["27"]);
 G2L["29"]["BackgroundColor3"] = Color3.fromRGB(0, 55, 81);
 G2L["29"]["Size"] = UDim2.new(0, 15, 0, 15);
@@ -411,11 +406,11 @@ G2L["29"]["BorderColor3"] = Color3.fromRGB(99, 150, 182);
 G2L["29"]["Visible"] = false;
 G2L["29"]["BackgroundTransparency"] = 0.6000000238418579;
 
--- StarterGui.SynapseX.Main.Minimize.UICorner
+-- StarterGui.Synaptics.Main.Minimize.UICorner
 G2L["2a"] = Instance.new("UICorner", G2L["27"]);
 G2L["2a"]["CornerRadius"] = UDim.new(0, 0);
 
--- StarterGui.SynapseX.Main.Execute
+-- StarterGui.Synaptics.Main.Execute
 G2L["2b"] = Instance.new("ImageButton", G2L["6"]);
 G2L["2b"]["BorderSizePixel"] = 0;
 G2L["2b"]["BackgroundColor3"] = Color3.fromRGB(61, 61, 61);
@@ -424,7 +419,7 @@ G2L["2b"]["Name"] = [[Execute]];
 G2L["2b"]["BorderColor3"] = Color3.fromRGB(99, 150, 182);
 G2L["2b"]["Position"] = UDim2.new(0, 6, 0, 250);
 
--- StarterGui.SynapseX.Main.Execute.NameText
+-- StarterGui.Synaptics.Main.Execute.NameText
 G2L["2c"] = Instance.new("TextLabel", G2L["2b"]);
 G2L["2c"]["TextWrapped"] = true;
 G2L["2c"]["ZIndex"] = 2;
@@ -439,7 +434,7 @@ G2L["2c"]["Text"] = [[Execute]];
 G2L["2c"]["Name"] = [[NameText]];
 G2L["2c"]["BackgroundTransparency"] = 1;
 
--- StarterGui.SynapseX.Main.Execute.ImageButton
+-- StarterGui.Synaptics.Main.Execute.ImageButton
 G2L["2d"] = Instance.new("ImageButton", G2L["2b"]);
 G2L["2d"]["BackgroundColor3"] = Color3.fromRGB(0, 55, 81);
 G2L["2d"]["Size"] = UDim2.new(0, 82, 0, 27);
@@ -447,11 +442,11 @@ G2L["2d"]["BorderColor3"] = Color3.fromRGB(99, 150, 182);
 G2L["2d"]["Visible"] = false;
 G2L["2d"]["BackgroundTransparency"] = 0.6000000238418579;
 
--- StarterGui.SynapseX.Main.Execute.UICorner
+-- StarterGui.Synaptics.Main.Execute.UICorner
 G2L["2e"] = Instance.new("UICorner", G2L["2b"]);
 G2L["2e"]["CornerRadius"] = UDim.new(0, 0);
 
--- StarterGui.SynapseX.Main.SaveFile
+-- StarterGui.Synaptics.Main.SaveFile
 G2L["2f"] = Instance.new("ImageButton", G2L["6"]);
 G2L["2f"]["BorderSizePixel"] = 0;
 G2L["2f"]["BackgroundColor3"] = Color3.fromRGB(61, 61, 61);
@@ -460,7 +455,7 @@ G2L["2f"]["Name"] = [[SaveFile]];
 G2L["2f"]["BorderColor3"] = Color3.fromRGB(99, 150, 182);
 G2L["2f"]["Position"] = UDim2.new(0, 266, 0, 250);
 
--- StarterGui.SynapseX.Main.SaveFile.NameText
+-- StarterGui.Synaptics.Main.SaveFile.NameText
 G2L["30"] = Instance.new("TextLabel", G2L["2f"]);
 G2L["30"]["TextWrapped"] = true;
 G2L["30"]["ZIndex"] = 2;
@@ -475,7 +470,7 @@ G2L["30"]["Text"] = [[Save File]];
 G2L["30"]["Name"] = [[NameText]];
 G2L["30"]["BackgroundTransparency"] = 1;
 
--- StarterGui.SynapseX.Main.SaveFile.ImageButton
+-- StarterGui.Synaptics.Main.SaveFile.ImageButton
 G2L["31"] = Instance.new("ImageButton", G2L["2f"]);
 G2L["31"]["BackgroundColor3"] = Color3.fromRGB(0, 55, 81);
 G2L["31"]["Size"] = UDim2.new(0, 82, 0, 27);
@@ -483,11 +478,11 @@ G2L["31"]["BorderColor3"] = Color3.fromRGB(99, 150, 182);
 G2L["31"]["Visible"] = false;
 G2L["31"]["BackgroundTransparency"] = 0.6000000238418579;
 
--- StarterGui.SynapseX.Main.SaveFile.UICorner
+-- StarterGui.Synaptics.Main.SaveFile.UICorner
 G2L["32"] = Instance.new("UICorner", G2L["2f"]);
 G2L["32"]["CornerRadius"] = UDim.new(0, 0);
 
--- StarterGui.SynapseX.Main.Close
+-- StarterGui.Synaptics.Main.Close
 G2L["33"] = Instance.new("ImageButton", G2L["6"]);
 G2L["33"]["BorderSizePixel"] = 0;
 G2L["33"]["BackgroundColor3"] = Color3.fromRGB(61, 61, 61);
@@ -496,7 +491,7 @@ G2L["33"]["Name"] = [[Close]];
 G2L["33"]["BorderColor3"] = Color3.fromRGB(99, 150, 182);
 G2L["33"]["Position"] = UDim2.new(0, 627, 0, 2);
 
--- StarterGui.SynapseX.Main.Close.NameText
+-- StarterGui.Synaptics.Main.Close.NameText
 G2L["34"] = Instance.new("TextLabel", G2L["33"]);
 G2L["34"]["TextWrapped"] = true;
 G2L["34"]["ZIndex"] = 2;
@@ -510,7 +505,7 @@ G2L["34"]["Text"] = [[x]];
 G2L["34"]["Name"] = [[NameText]];
 G2L["34"]["BackgroundTransparency"] = 1;
 
--- StarterGui.SynapseX.Main.Close.ImageButton
+-- StarterGui.Synaptics.Main.Close.ImageButton
 G2L["35"] = Instance.new("ImageButton", G2L["33"]);
 G2L["35"]["BackgroundColor3"] = Color3.fromRGB(0, 55, 81);
 G2L["35"]["Size"] = UDim2.new(0, 15, 0, 15);
@@ -518,11 +513,11 @@ G2L["35"]["BorderColor3"] = Color3.fromRGB(99, 150, 182);
 G2L["35"]["Visible"] = false;
 G2L["35"]["BackgroundTransparency"] = 0.6000000238418579;
 
--- StarterGui.SynapseX.Main.Close.UICorner
+-- StarterGui.Synaptics.Main.Close.UICorner
 G2L["36"] = Instance.new("UICorner", G2L["33"]);
 G2L["36"]["CornerRadius"] = UDim.new(0, 0);
 
--- StarterGui.SynapseX.Main.Clear
+-- StarterGui.Synaptics.Main.Clear
 G2L["37"] = Instance.new("ImageButton", G2L["6"]);
 G2L["37"]["BorderSizePixel"] = 0;
 G2L["37"]["BackgroundColor3"] = Color3.fromRGB(61, 61, 61);
@@ -531,7 +526,7 @@ G2L["37"]["Name"] = [[Clear]];
 G2L["37"]["BorderColor3"] = Color3.fromRGB(99, 150, 182);
 G2L["37"]["Position"] = UDim2.new(0, 92, 0, 250);
 
--- StarterGui.SynapseX.Main.Clear.NameText
+-- StarterGui.Synaptics.Main.Clear.NameText
 G2L["38"] = Instance.new("TextLabel", G2L["37"]);
 G2L["38"]["TextWrapped"] = true;
 G2L["38"]["ZIndex"] = 2;
@@ -546,7 +541,7 @@ G2L["38"]["Text"] = [[Clear]];
 G2L["38"]["Name"] = [[NameText]];
 G2L["38"]["BackgroundTransparency"] = 1;
 
--- StarterGui.SynapseX.Main.Clear.ImageButton
+-- StarterGui.Synaptics.Main.Clear.ImageButton
 G2L["39"] = Instance.new("ImageButton", G2L["37"]);
 G2L["39"]["BackgroundColor3"] = Color3.fromRGB(0, 55, 81);
 G2L["39"]["Size"] = UDim2.new(0, 82, 0, 27);
@@ -554,11 +549,11 @@ G2L["39"]["BorderColor3"] = Color3.fromRGB(99, 150, 182);
 G2L["39"]["Visible"] = false;
 G2L["39"]["BackgroundTransparency"] = 0.6000000238418579;
 
--- StarterGui.SynapseX.Main.Clear.UICorner
+-- StarterGui.Synaptics.Main.Clear.UICorner
 G2L["3a"] = Instance.new("UICorner", G2L["37"]);
 G2L["3a"]["CornerRadius"] = UDim.new(0, 0);
 
--- StarterGui.SynapseX.Main.Attach
+-- StarterGui.Synaptics.Main.Attach
 G2L["3b"] = Instance.new("ImageButton", G2L["6"]);
 G2L["3b"]["BorderSizePixel"] = 0;
 G2L["3b"]["BackgroundColor3"] = Color3.fromRGB(61, 61, 61);
@@ -567,7 +562,7 @@ G2L["3b"]["Name"] = [[Attach]];
 G2L["3b"]["BorderColor3"] = Color3.fromRGB(99, 150, 182);
 G2L["3b"]["Position"] = UDim2.new(0, 474, 0, 250);
 
--- StarterGui.SynapseX.Main.Attach.NameText
+-- StarterGui.Synaptics.Main.Attach.NameText
 G2L["3c"] = Instance.new("TextLabel", G2L["3b"]);
 G2L["3c"]["TextWrapped"] = true;
 G2L["3c"]["ZIndex"] = 2;
@@ -582,7 +577,7 @@ G2L["3c"]["Text"] = [[Attach]];
 G2L["3c"]["Name"] = [[NameText]];
 G2L["3c"]["BackgroundTransparency"] = 1;
 
--- StarterGui.SynapseX.Main.Attach.ImageButton
+-- StarterGui.Synaptics.Main.Attach.ImageButton
 G2L["3d"] = Instance.new("ImageButton", G2L["3b"]);
 G2L["3d"]["BackgroundColor3"] = Color3.fromRGB(0, 55, 81);
 G2L["3d"]["Size"] = UDim2.new(0, 82, 0, 27);
@@ -590,11 +585,11 @@ G2L["3d"]["BorderColor3"] = Color3.fromRGB(99, 150, 182);
 G2L["3d"]["Visible"] = false;
 G2L["3d"]["BackgroundTransparency"] = 0.6000000238418579;
 
--- StarterGui.SynapseX.Main.Attach.UICorner
+-- StarterGui.Synaptics.Main.Attach.UICorner
 G2L["3e"] = Instance.new("UICorner", G2L["3b"]);
 G2L["3e"]["CornerRadius"] = UDim.new(0, 0);
 
--- StarterGui.SynapseX.Main.OpenFile
+-- StarterGui.Synaptics.Main.OpenFile
 G2L["3f"] = Instance.new("ImageButton", G2L["6"]);
 G2L["3f"]["BorderSizePixel"] = 0;
 G2L["3f"]["BackgroundColor3"] = Color3.fromRGB(61, 61, 61);
@@ -603,7 +598,7 @@ G2L["3f"]["Name"] = [[OpenFile]];
 G2L["3f"]["BorderColor3"] = Color3.fromRGB(99, 150, 182);
 G2L["3f"]["Position"] = UDim2.new(0, 179, 0, 250);
 
--- StarterGui.SynapseX.Main.OpenFile.NameText
+-- StarterGui.Synaptics.Main.OpenFile.NameText
 G2L["40"] = Instance.new("TextLabel", G2L["3f"]);
 G2L["40"]["TextWrapped"] = true;
 G2L["40"]["ZIndex"] = 2;
@@ -618,7 +613,7 @@ G2L["40"]["Text"] = [[Open File]];
 G2L["40"]["Name"] = [[NameText]];
 G2L["40"]["BackgroundTransparency"] = 1;
 
--- StarterGui.SynapseX.Main.OpenFile.ImageButton
+-- StarterGui.Synaptics.Main.OpenFile.ImageButton
 G2L["41"] = Instance.new("ImageButton", G2L["3f"]);
 G2L["41"]["BackgroundColor3"] = Color3.fromRGB(0, 55, 81);
 G2L["41"]["Size"] = UDim2.new(0, 82, 0, 27);
@@ -626,11 +621,11 @@ G2L["41"]["BorderColor3"] = Color3.fromRGB(99, 150, 182);
 G2L["41"]["Visible"] = false;
 G2L["41"]["BackgroundTransparency"] = 0.6000000238418579;
 
--- StarterGui.SynapseX.Main.OpenFile.UICorner
+-- StarterGui.Synaptics.Main.OpenFile.UICorner
 G2L["42"] = Instance.new("UICorner", G2L["3f"]);
 G2L["42"]["CornerRadius"] = UDim.new(0, 0);
 
--- StarterGui.SynapseX.Main.ScriptTab
+-- StarterGui.Synaptics.Main.ScriptTab
 G2L["43"] = Instance.new("ScrollingFrame", G2L["6"]);
 G2L["43"]["Active"] = true;
 G2L["43"]["ScrollingDirection"] = Enum.ScrollingDirection.X;
@@ -651,15 +646,15 @@ G2L["43"]["Position"] = UDim2.new(0, 6, 0, 32);
 G2L["43"]["Name"] = [[ScriptTab]];
 G2L["43"]["SelectionGroup"] = false;
 
--- StarterGui.SynapseX.Main.ScriptTab.ScriptTabHandler
+-- StarterGui.Synaptics.Main.ScriptTab.ScriptTabHandler
 G2L["44"] = Instance.new("LocalScript", G2L["43"]);
 G2L["44"]["Name"] = [[ScriptTabHandler]];
 
--- StarterGui.SynapseX.Main.ScriptTab.Tabs
+-- StarterGui.Synaptics.Main.ScriptTab.Tabs
 G2L["45"] = Instance.new("Folder", G2L["43"]);
 G2L["45"]["Name"] = [[Tabs]];
 
--- StarterGui.SynapseX.Main.ScriptTab.Tabs.AddScript
+-- StarterGui.Synaptics.Main.ScriptTab.Tabs.AddScript
 G2L["46"] = Instance.new("Frame", G2L["45"]);
 G2L["46"]["Active"] = true;
 G2L["46"]["ZIndex"] = 0;
@@ -671,7 +666,7 @@ G2L["46"]["Size"] = UDim2.new(0, 10, 0, 11);
 G2L["46"]["Selectable"] = true;
 G2L["46"]["Name"] = [[AddScript]];
 
--- StarterGui.SynapseX.Main.ScriptTab.Tabs.AddScript.Button
+-- StarterGui.Synaptics.Main.ScriptTab.Tabs.AddScript.Button
 G2L["47"] = Instance.new("TextButton", G2L["46"]);
 G2L["47"]["BorderSizePixel"] = 0;
 G2L["47"]["BackgroundColor3"] = Color3.fromRGB(101, 101, 101);
@@ -685,16 +680,16 @@ G2L["47"]["Text"] = [[+]];
 G2L["47"]["Position"] = UDim2.new(0.1599999964237213, 0, 0.25, 0);
 G2L["47"]["BackgroundTransparency"] = 0.10000000149011612;
 
--- StarterGui.SynapseX.Main.ScriptTab.Tabs.UIListLayout
+-- StarterGui.Synaptics.Main.ScriptTab.Tabs.UIListLayout
 G2L["48"] = Instance.new("UIListLayout", G2L["45"]);
 G2L["48"]["FillDirection"] = Enum.FillDirection.Horizontal;
 G2L["48"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
 
--- StarterGui.SynapseX.Main.ButtonsHandler
+-- StarterGui.Synaptics.Main.ButtonsHandler
 G2L["49"] = Instance.new("LocalScript", G2L["6"]);
 G2L["49"]["Name"] = [[ButtonsHandler]];
 
--- StarterGui.SynapseX.SaveScript
+-- StarterGui.Synaptics.SaveScript
 G2L["4a"] = Instance.new("Frame", G2L["1"]);
 G2L["4a"]["Active"] = true;
 G2L["4a"]["ZIndex"] = 10;
@@ -705,7 +700,7 @@ G2L["4a"]["Position"] = UDim2.new(0.2866774797439575, 0, 0.3861943185329437, 0);
 G2L["4a"]["Visible"] = false;
 G2L["4a"]["Name"] = [[SaveScript]];
 
--- StarterGui.SynapseX.SaveScript.scriptname
+-- StarterGui.Synaptics.SaveScript.scriptname
 G2L["4b"] = Instance.new("TextBox", G2L["4a"]);
 G2L["4b"]["ZIndex"] = 11;
 G2L["4b"]["BorderSizePixel"] = 0;
@@ -719,7 +714,7 @@ G2L["4b"]["Text"] = [[]];
 G2L["4b"]["Position"] = UDim2.new(0, 3, 0, 32);
 G2L["4b"]["Name"] = [[scriptname]];
 
--- StarterGui.SynapseX.SaveScript.savescript
+-- StarterGui.Synaptics.SaveScript.savescript
 G2L["4c"] = Instance.new("TextButton", G2L["4a"]);
 G2L["4c"]["ZIndex"] = 11;
 G2L["4c"]["BorderSizePixel"] = 0;
@@ -732,7 +727,7 @@ G2L["4c"]["Name"] = [[savescript]];
 G2L["4c"]["Text"] = [[Save File]];
 G2L["4c"]["Position"] = UDim2.new(0, 3, 0, 56);
 
--- StarterGui.SynapseX.SaveScript.Icon
+-- StarterGui.Synaptics.SaveScript.Icon
 G2L["4d"] = Instance.new("ImageLabel", G2L["4a"]);
 G2L["4d"]["ZIndex"] = 11;
 G2L["4d"]["BorderSizePixel"] = 0;
@@ -743,11 +738,11 @@ G2L["4d"]["Name"] = [[Icon]];
 G2L["4d"]["BackgroundTransparency"] = 1;
 G2L["4d"]["Position"] = UDim2.new(0.008999999612569809, 0, 0.05000000074505806, 0);
 
--- StarterGui.SynapseX.SaveScript.Icon.UIAspectRatioConstraint
+-- StarterGui.Synaptics.SaveScript.Icon.UIAspectRatioConstraint
 G2L["4e"] = Instance.new("UIAspectRatioConstraint", G2L["4d"]);
 G2L["4e"]["AspectRatio"] = 0.8846153616905212;
 
--- StarterGui.SynapseX.SaveScript.Title
+-- StarterGui.Synaptics.SaveScript.Title
 G2L["4f"] = Instance.new("TextLabel", G2L["4a"]);
 G2L["4f"]["TextWrapped"] = true;
 G2L["4f"]["ZIndex"] = 11;
@@ -758,11 +753,11 @@ G2L["4f"]["TextSize"] = 15;
 G2L["4f"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["4f"]["Size"] = UDim2.new(0, 322, 0, 30);
 G2L["4f"]["Active"] = true;
-G2L["4f"]["Text"] = [[Synapse X - Save File]];
+G2L["4f"]["Text"] = [[Synaptics - Save File]];
 G2L["4f"]["Name"] = [[Title]];
 G2L["4f"]["BackgroundTransparency"] = 1;
 
--- StarterGui.SynapseX.SaveScript.Close
+-- StarterGui.Synaptics.SaveScript.Close
 G2L["50"] = Instance.new("TextButton", G2L["4a"]);
 G2L["50"]["TextWrapped"] = true;
 G2L["50"]["ZIndex"] = 12;
@@ -777,11 +772,11 @@ G2L["50"]["Text"] = [[x]];
 G2L["50"]["Position"] = UDim2.new(0.9130434989929199, 0, 0.024690981954336166, 0);
 G2L["50"]["BackgroundTransparency"] = 1;
 
--- StarterGui.SynapseX.SaveScript.Handler
+-- StarterGui.Synaptics.SaveScript.Handler
 G2L["51"] = Instance.new("LocalScript", G2L["4a"]);
 G2L["51"]["Name"] = [[Handler]];
 
--- StarterGui.SynapseX.ScriptLog
+-- StarterGui.Synaptics.ScriptLog
 G2L["52"] = Instance.new("Frame", G2L["1"]);
 G2L["52"]["Active"] = true;
 G2L["52"]["BorderSizePixel"] = 0;
@@ -791,7 +786,7 @@ G2L["52"]["Position"] = UDim2.new(0.25691962242126465, 0, 0.26443204283714294, 0
 G2L["52"]["Visible"] = false;
 G2L["52"]["Name"] = [[ScriptLog]];
 
--- StarterGui.SynapseX.ScriptLog.MainFrame
+-- StarterGui.Synaptics.ScriptLog.MainFrame
 G2L["53"] = Instance.new("Frame", G2L["52"]);
 G2L["53"]["BorderSizePixel"] = 0;
 G2L["53"]["BackgroundColor3"] = Color3.fromRGB(51, 51, 51);
@@ -799,7 +794,7 @@ G2L["53"]["Size"] = UDim2.new(0, 353, 0, 185);
 G2L["53"]["Position"] = UDim2.new(0, 0, 1, 0);
 G2L["53"]["Name"] = [[MainFrame]];
 
--- StarterGui.SynapseX.ScriptLog.MainFrame.ANS9DZNASD8Z7NAS987NAFA
+-- StarterGui.Synaptics.ScriptLog.MainFrame.ANS9DZNASD8Z7NAS987NAFA
 G2L["54"] = Instance.new("ScrollingFrame", G2L["53"]);
 G2L["54"]["Active"] = true;
 G2L["54"]["BorderSizePixel"] = 0;
@@ -808,7 +803,7 @@ G2L["54"]["Size"] = UDim2.new(0, 116, 0, 162);
 G2L["54"]["Position"] = UDim2.new(0.033443499356508255, 0, 0.06024263799190521, 0);
 G2L["54"]["Name"] = [[ANS9DZNASD8Z7NAS987NAFA]];
 
--- StarterGui.SynapseX.ScriptLog.MainFrame.ANS9DZNASD8Z7NAS987NAFA.Script1
+-- StarterGui.Synaptics.ScriptLog.MainFrame.ANS9DZNASD8Z7NAS987NAFA.Script1
 G2L["55"] = Instance.new("TextButton", G2L["54"]);
 G2L["55"]["BorderSizePixel"] = 0;
 G2L["55"]["TextXAlignment"] = Enum.TextXAlignment.Left;
@@ -820,7 +815,7 @@ G2L["55"]["Size"] = UDim2.new(0, 116, 0, 19);
 G2L["55"]["Name"] = [[Script1]];
 G2L["55"]["Text"] = [[Script1]];
 
--- StarterGui.SynapseX.ScriptLog.MainFrame.A8SDMZAS89DZANSA98F
+-- StarterGui.Synaptics.ScriptLog.MainFrame.A8SDMZAS89DZANSA98F
 G2L["56"] = Instance.new("TextButton", G2L["53"]);
 G2L["56"]["BorderSizePixel"] = 0;
 G2L["56"]["BackgroundColor3"] = Color3.fromRGB(61, 61, 61);
@@ -832,7 +827,7 @@ G2L["56"]["Name"] = [[A8SDMZAS89DZANSA98F]];
 G2L["56"]["Text"] = [[Close]];
 G2L["56"]["Position"] = UDim2.new(0.7019798755645752, 0, 0.800000011920929, 0);
 
--- StarterGui.SynapseX.ScriptLog.MainFrame.9NAC7A9S7N8ZASFH9ASF87NAS8YGA9GSA7
+-- StarterGui.Synaptics.ScriptLog.MainFrame.9NAC7A9S7N8ZASFH9ASF87NAS8YGA9GSA7
 G2L["57"] = Instance.new("TextBox", G2L["53"]);
 G2L["57"]["BorderSizePixel"] = 0;
 G2L["57"]["TextEditable"] = false;
@@ -848,7 +843,7 @@ G2L["57"]["Position"] = UDim2.new(0.4107648730278015, 0, 0.05550934001803398, 0)
 G2L["57"]["Name"] = [[9NAC7A9S7N8ZASFH9ASF87NAS8YGA9GSA7]];
 G2L["57"]["ClearTextOnFocus"] = false;
 
--- StarterGui.SynapseX.ScriptLog.MainFrame.9A8D7NAS9Z87NZDA98S7DNA98DNZ9A8SN
+-- StarterGui.Synaptics.ScriptLog.MainFrame.9A8D7NAS9Z87NZDA98S7DNA98DNZ9A8SN
 G2L["58"] = Instance.new("TextButton", G2L["53"]);
 G2L["58"]["BorderSizePixel"] = 0;
 G2L["58"]["BackgroundColor3"] = Color3.fromRGB(61, 61, 61);
@@ -860,7 +855,7 @@ G2L["58"]["Name"] = [[9A8D7NAS9Z87NZDA98S7DNA98DNZ9A8SN]];
 G2L["58"]["Text"] = [[Copy Code]];
 G2L["58"]["Position"] = UDim2.new(0.4107648730278015, 0, 0.800000011920929, 0);
 
--- StarterGui.SynapseX.ScriptLog.Icon
+-- StarterGui.Synaptics.ScriptLog.Icon
 G2L["59"] = Instance.new("ImageLabel", G2L["52"]);
 G2L["59"]["BorderSizePixel"] = 0;
 G2L["59"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
@@ -870,7 +865,7 @@ G2L["59"]["Name"] = [[Icon]];
 G2L["59"]["BackgroundTransparency"] = 1;
 G2L["59"]["Position"] = UDim2.new(0.00932147353887558, 0, -0.006203480064868927, 0);
 
--- StarterGui.SynapseX.ScriptLog.Title
+-- StarterGui.Synaptics.ScriptLog.Title
 G2L["5a"] = Instance.new("TextLabel", G2L["52"]);
 G2L["5a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["5a"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
@@ -881,7 +876,7 @@ G2L["5a"]["Text"] = [[Script Log]];
 G2L["5a"]["Name"] = [[Title]];
 G2L["5a"]["BackgroundTransparency"] = 1;
 
--- StarterGui.SynapseX.ScriptHubMenu
+-- StarterGui.Synaptics.ScriptHubMenu
 G2L["5b"] = Instance.new("Frame", G2L["1"]);
 G2L["5b"]["Active"] = true;
 G2L["5b"]["BorderSizePixel"] = 0;
@@ -891,7 +886,7 @@ G2L["5b"]["Position"] = UDim2.new(0, 13, 0, 13);
 G2L["5b"]["Visible"] = false;
 G2L["5b"]["Name"] = [[ScriptHubMenu]];
 
--- StarterGui.SynapseX.ScriptHubMenu.Background
+-- StarterGui.Synaptics.ScriptHubMenu.Background
 G2L["5c"] = Instance.new("ImageLabel", G2L["5b"]);
 G2L["5c"]["BorderSizePixel"] = 0;
 G2L["5c"]["ScaleType"] = Enum.ScaleType.Tile;
@@ -901,7 +896,7 @@ G2L["5c"]["Active"] = true;
 G2L["5c"]["BorderColor3"] = Color3.fromRGB(55, 55, 55);
 G2L["5c"]["Name"] = [[Background]];
 
--- StarterGui.SynapseX.ScriptHubMenu.Background.ScrollingFrame
+-- StarterGui.Synaptics.ScriptHubMenu.Background.ScrollingFrame
 G2L["5d"] = Instance.new("ScrollingFrame", G2L["5c"]);
 G2L["5d"]["Active"] = true;
 G2L["5d"]["BorderSizePixel"] = 0;
@@ -914,7 +909,7 @@ G2L["5d"]["ScrollBarThickness"] = 14;
 G2L["5d"]["Position"] = UDim2.new(0.020667528733611107, 0, 0.13779912889003754, 0);
 G2L["5d"]["BottomImage"] = [[rbxasset://textures/ui/Scroll/scroll-middle.png]];
 
--- StarterGui.SynapseX.ScriptHubMenu.Background.ScrollingFrame.Dex
+-- StarterGui.Synaptics.ScriptHubMenu.Background.ScrollingFrame.Dex
 G2L["5e"] = Instance.new("TextButton", G2L["5d"]);
 G2L["5e"]["TextWrapped"] = true;
 G2L["5e"]["BorderSizePixel"] = 0;
@@ -930,7 +925,7 @@ G2L["5e"]["Text"] = [[Dex Explorer]];
 G2L["5e"]["Position"] = UDim2.new(0, 1, 0, 1);
 G2L["5e"]["BackgroundTransparency"] = 1;
 
--- StarterGui.SynapseX.ScriptHubMenu.Background.ScrollingFrame.ScriptDumper
+-- StarterGui.Synaptics.ScriptHubMenu.Background.ScrollingFrame.ScriptDumper
 G2L["5f"] = Instance.new("TextButton", G2L["5d"]);
 G2L["5f"]["BorderSizePixel"] = 0;
 G2L["5f"]["TextXAlignment"] = Enum.TextXAlignment.Left;
@@ -945,7 +940,7 @@ G2L["5f"]["Text"] = [[Script Dumper]];
 G2L["5f"]["Position"] = UDim2.new(0.008999999612569809, 0, 0.34637168049812317, 0);
 G2L["5f"]["BackgroundTransparency"] = 1;
 
--- StarterGui.SynapseX.ScriptHubMenu.Background.ScrollingFrame.RemoteSpy
+-- StarterGui.Synaptics.ScriptHubMenu.Background.ScrollingFrame.RemoteSpy
 G2L["60"] = Instance.new("TextButton", G2L["5d"]);
 G2L["60"]["BorderSizePixel"] = 0;
 G2L["60"]["TextXAlignment"] = Enum.TextXAlignment.Left;
@@ -960,7 +955,7 @@ G2L["60"]["Text"] = [[Remote Spy]];
 G2L["60"]["Position"] = UDim2.new(0.008999999612569809, 0, 0.23982301354408264, 0);
 G2L["60"]["BackgroundTransparency"] = 1;
 
--- StarterGui.SynapseX.ScriptHubMenu.Background.ScrollingFrame.UnnamedESP
+-- StarterGui.Synaptics.ScriptHubMenu.Background.ScrollingFrame.UnnamedESP
 G2L["61"] = Instance.new("TextButton", G2L["5d"]);
 G2L["61"]["BorderSizePixel"] = 0;
 G2L["61"]["TextXAlignment"] = Enum.TextXAlignment.Left;
@@ -975,7 +970,7 @@ G2L["61"]["Text"] = [[Unnamed ESP]];
 G2L["61"]["Position"] = UDim2.new(0.00917431153357029, 0, 0.11946903169155121, 0);
 G2L["61"]["BackgroundTransparency"] = 1;
 
--- StarterGui.SynapseX.ScriptHubMenu.Close
+-- StarterGui.Synaptics.ScriptHubMenu.Close
 G2L["62"] = Instance.new("TextButton", G2L["5b"]);
 G2L["62"]["BorderSizePixel"] = 0;
 G2L["62"]["BackgroundColor3"] = Color3.fromRGB(60, 60, 60);
@@ -988,7 +983,7 @@ G2L["62"]["BorderColor3"] = Color3.fromRGB(99, 150, 182);
 G2L["62"]["Text"] = [[Close]];
 G2L["62"]["Position"] = UDim2.new(0.6677603721618652, 0, 7.790436744689941, 0);
 
--- StarterGui.SynapseX.ScriptHubMenu.Title
+-- StarterGui.Synaptics.ScriptHubMenu.Title
 G2L["63"] = Instance.new("TextLabel", G2L["5b"]);
 G2L["63"]["TextWrapped"] = true;
 G2L["63"]["ZIndex"] = 3;
@@ -1000,11 +995,11 @@ G2L["63"]["TextSize"] = 15;
 G2L["63"].Active = true;
 G2L["63"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["63"]["Size"] = UDim2.new(0, 410, 0, 30);
-G2L["63"]["Text"] = [[Synapse X - Script Hub]];
+G2L["63"]["Text"] = [[Synaptics - Script Hub]];
 G2L["63"]["Name"] = [[Title]];
 G2L["63"]["BackgroundTransparency"] = 1;
 
--- StarterGui.SynapseX.ScriptHubMenu.Description
+-- StarterGui.Synaptics.ScriptHubMenu.Description
 G2L["64"] = Instance.new("TextLabel", G2L["5b"]);
 G2L["64"]["TextWrapped"] = true;
 G2L["64"]["BorderSizePixel"] = 0;
@@ -1020,7 +1015,7 @@ G2L["64"]["Text"] = [[]];
 G2L["64"]["Name"] = [[Description]];
 G2L["64"]["Position"] = UDim2.new(0.31386861205101013, 0, 5.612903118133545, 0);
 
--- StarterGui.SynapseX.ScriptHubMenu.Minimize
+-- StarterGui.Synaptics.ScriptHubMenu.Minimize
 G2L["65"] = Instance.new("TextButton", G2L["5b"]);
 G2L["65"]["ZIndex"] = 3;
 G2L["65"]["BorderSizePixel"] = 0;
@@ -1034,7 +1029,7 @@ G2L["65"]["BorderColor3"] = Color3.fromRGB(99, 150, 182);
 G2L["65"]["Text"] = [[_]];
 G2L["65"]["Position"] = UDim2.new(0.9318734407424927, 0, 0.16129040718078613, 0);
 
--- StarterGui.SynapseX.ScriptHubMenu.Dex
+-- StarterGui.Synaptics.ScriptHubMenu.Dex
 G2L["66"] = Instance.new("Frame", G2L["5b"]);
 G2L["66"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["66"]["BackgroundTransparency"] = 1;
@@ -1042,7 +1037,7 @@ G2L["66"]["Size"] = UDim2.new(0, 100, 0, 100);
 G2L["66"]["Visible"] = false;
 G2L["66"]["Name"] = [[Dex]];
 
--- StarterGui.SynapseX.ScriptHubMenu.Dex.Image
+-- StarterGui.Synaptics.ScriptHubMenu.Dex.Image
 G2L["67"] = Instance.new("ImageLabel", G2L["66"]);
 G2L["67"]["BorderSizePixel"] = 0;
 G2L["67"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
@@ -1052,7 +1047,7 @@ G2L["67"]["Name"] = [[Image]];
 G2L["67"]["BackgroundTransparency"] = 1;
 G2L["67"]["Position"] = UDim2.new(1.283868670463562, 0, 0.38265305757522583, 0);
 
--- StarterGui.SynapseX.ScriptHubMenu.RemoteSpy
+-- StarterGui.Synaptics.ScriptHubMenu.RemoteSpy
 G2L["68"] = Instance.new("Frame", G2L["5b"]);
 G2L["68"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["68"]["BackgroundTransparency"] = 1;
@@ -1060,7 +1055,7 @@ G2L["68"]["Size"] = UDim2.new(0, 100, 0, 100);
 G2L["68"]["Visible"] = false;
 G2L["68"]["Name"] = [[RemoteSpy]];
 
--- StarterGui.SynapseX.ScriptHubMenu.RemoteSpy.Image
+-- StarterGui.Synaptics.ScriptHubMenu.RemoteSpy.Image
 G2L["69"] = Instance.new("ImageLabel", G2L["68"]);
 G2L["69"]["BorderSizePixel"] = 0;
 G2L["69"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
@@ -1070,7 +1065,7 @@ G2L["69"]["Name"] = [[Image]];
 G2L["69"]["BackgroundTransparency"] = 1;
 G2L["69"]["Position"] = UDim2.new(1.283868670463562, 0, 0.38265305757522583, 0);
 
--- StarterGui.SynapseX.ScriptHubMenu.UnnamedESP
+-- StarterGui.Synaptics.ScriptHubMenu.UnnamedESP
 G2L["6a"] = Instance.new("Frame", G2L["5b"]);
 G2L["6a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["6a"]["BackgroundTransparency"] = 1;
@@ -1078,7 +1073,7 @@ G2L["6a"]["Size"] = UDim2.new(0, 100, 0, 100);
 G2L["6a"]["Visible"] = false;
 G2L["6a"]["Name"] = [[UnnamedESP]];
 
--- StarterGui.SynapseX.ScriptHubMenu.UnnamedESP.Image
+-- StarterGui.Synaptics.ScriptHubMenu.UnnamedESP.Image
 G2L["6b"] = Instance.new("ImageLabel", G2L["6a"]);
 G2L["6b"]["BorderSizePixel"] = 0;
 G2L["6b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
@@ -1088,7 +1083,7 @@ G2L["6b"]["Name"] = [[Image]];
 G2L["6b"]["BackgroundTransparency"] = 1;
 G2L["6b"]["Position"] = UDim2.new(1.283868670463562, 0, 0.38265305757522583, 0);
 
--- StarterGui.SynapseX.ScriptHubMenu.ScriptDumper
+-- StarterGui.Synaptics.ScriptHubMenu.ScriptDumper
 G2L["6c"] = Instance.new("Frame", G2L["5b"]);
 G2L["6c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["6c"]["BackgroundTransparency"] = 1;
@@ -1096,7 +1091,7 @@ G2L["6c"]["Size"] = UDim2.new(0, 100, 0, 100);
 G2L["6c"]["Visible"] = false;
 G2L["6c"]["Name"] = [[ScriptDumper]];
 
--- StarterGui.SynapseX.ScriptHubMenu.ScriptDumper.Image
+-- StarterGui.Synaptics.ScriptHubMenu.ScriptDumper.Image
 G2L["6d"] = Instance.new("ImageLabel", G2L["6c"]);
 G2L["6d"]["BorderSizePixel"] = 0;
 G2L["6d"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
@@ -1106,7 +1101,7 @@ G2L["6d"]["Name"] = [[Image]];
 G2L["6d"]["BackgroundTransparency"] = 1;
 G2L["6d"]["Position"] = UDim2.new(1.283868670463562, 0, 0.38265305757522583, 0);
 
--- StarterGui.SynapseX.ScriptHubMenu.Icon
+-- StarterGui.Synaptics.ScriptHubMenu.Icon
 G2L["6e"] = Instance.new("ImageLabel", G2L["5b"]);
 G2L["6e"]["ZIndex"] = 6;
 G2L["6e"]["BorderSizePixel"] = 0;
@@ -1117,7 +1112,7 @@ G2L["6e"]["Name"] = [[Icon]];
 G2L["6e"]["BackgroundTransparency"] = 1;
 G2L["6e"]["Position"] = UDim2.new(0.00932147353887558, 0, 0.05000000074505806, 0);
 
--- StarterGui.SynapseX.ScriptHubMenu.Panel
+-- StarterGui.Synaptics.ScriptHubMenu.Panel
 G2L["6f"] = Instance.new("Frame", G2L["5b"]);
 G2L["6f"]["BorderSizePixel"] = 0;
 G2L["6f"]["BackgroundColor3"] = Color3.fromRGB(60, 60, 60);
@@ -1125,7 +1120,7 @@ G2L["6f"]["Size"] = UDim2.new(0, 411, 0, 30);
 G2L["6f"]["Position"] = UDim2.new(0, 0, -0.009731169790029526, 0);
 G2L["6f"]["Name"] = [[Panel]];
 
--- StarterGui.SynapseX.ScriptHubMenu.Execute
+-- StarterGui.Synaptics.ScriptHubMenu.Execute
 G2L["70"] = Instance.new("TextButton", G2L["5b"]);
 G2L["70"]["BorderSizePixel"] = 0;
 G2L["70"]["BackgroundColor3"] = Color3.fromRGB(60, 60, 60);
@@ -1139,11 +1134,11 @@ G2L["70"]["BorderColor3"] = Color3.fromRGB(99, 150, 182);
 G2L["70"]["Text"] = [[Execute]];
 G2L["70"]["Position"] = UDim2.new(0.31386861205101013, 0, 7.764839172363281, 0);
 
--- StarterGui.SynapseX.ScriptHubMenu.ScriptHubHandler
+-- StarterGui.Synaptics.ScriptHubMenu.ScriptHubHandler
 G2L["71"] = Instance.new("LocalScript", G2L["5b"]);
 G2L["71"]["Name"] = [[ScriptHubHandler]];
 
--- StarterGui.SynapseX.OptionMenu
+-- StarterGui.Synaptics.OptionMenu
 G2L["72"] = Instance.new("Frame", G2L["1"]);
 G2L["72"]["Active"] = true;
 G2L["72"]["ZIndex"] = 5;
@@ -1154,7 +1149,7 @@ G2L["72"]["Position"] = UDim2.new(0, 671, 0, 16);
 G2L["72"]["Visible"] = false;
 G2L["72"]["Name"] = [[OptionMenu]];
 
--- StarterGui.SynapseX.OptionMenu.Title
+-- StarterGui.Synaptics.OptionMenu.Title
 G2L["73"] = Instance.new("TextLabel", G2L["72"]);
 G2L["73"]["ZIndex"] = 6;
 G2L["73"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
@@ -1167,7 +1162,7 @@ G2L["73"]["Name"] = [[Title]];
 G2L["73"]["BackgroundTransparency"] = 1;
 G2L["73"]["Position"] = UDim2.new(-0.0011280769249424338, 0, 0.07083868235349655, 0);
 
--- StarterGui.SynapseX.OptionMenu.FPSUnlocker
+-- StarterGui.Synaptics.OptionMenu.FPSUnlocker
 G2L["74"] = Instance.new("TextLabel", G2L["72"]);
 G2L["74"]["ZIndex"] = 6;
 G2L["74"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
@@ -1181,7 +1176,7 @@ G2L["74"]["Name"] = [[FPSUnlocker]];
 G2L["74"]["BackgroundTransparency"] = 1;
 G2L["74"]["Position"] = UDim2.new(0.35585591197013855, 0, 1.5485485792160034, 0);
 
--- StarterGui.SynapseX.OptionMenu.TopMost
+-- StarterGui.Synaptics.OptionMenu.TopMost
 G2L["75"] = Instance.new("TextLabel", G2L["72"]);
 G2L["75"]["ZIndex"] = 6;
 G2L["75"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
@@ -1195,7 +1190,7 @@ G2L["75"]["Name"] = [[TopMost]];
 G2L["75"]["BackgroundTransparency"] = 1;
 G2L["75"]["Position"] = UDim2.new(0.35585591197013855, 0, 3.7420969009399414, 0);
 
--- StarterGui.SynapseX.OptionMenu.InternalUI
+-- StarterGui.Synaptics.OptionMenu.InternalUI
 G2L["76"] = Instance.new("TextLabel", G2L["72"]);
 G2L["76"]["ZIndex"] = 6;
 G2L["76"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
@@ -1209,7 +1204,7 @@ G2L["76"]["Name"] = [[InternalUI]];
 G2L["76"]["BackgroundTransparency"] = 1;
 G2L["76"]["Position"] = UDim2.new(0.35585591197013855, 0, 3.0001611709594727, 0);
 
--- StarterGui.SynapseX.OptionMenu.Close
+-- StarterGui.Synaptics.OptionMenu.Close
 G2L["77"] = Instance.new("TextButton", G2L["72"]);
 G2L["77"]["ZIndex"] = 6;
 G2L["77"]["BorderSizePixel"] = 0;
@@ -1223,7 +1218,7 @@ G2L["77"]["BorderColor3"] = Color3.fromRGB(0, 231, 255);
 G2L["77"]["Text"] = [[Close]];
 G2L["77"]["Position"] = UDim2.new(0.04838477447628975, 0, 6.747819900512695, 0);
 
--- StarterGui.SynapseX.OptionMenu.ToggleFPSUnlocker
+-- StarterGui.Synaptics.OptionMenu.ToggleFPSUnlocker
 G2L["78"] = Instance.new("TextButton", G2L["72"]);
 G2L["78"]["TextWrapped"] = true;
 G2L["78"]["ZIndex"] = 6;
@@ -1237,7 +1232,7 @@ G2L["78"]["Name"] = [[ToggleFPSUnlocker]];
 G2L["78"]["Text"] = [[]];
 G2L["78"]["Position"] = UDim2.new(0.24308274686336517, 0, 1.5808066129684448, 0);
 
--- StarterGui.SynapseX.OptionMenu.ToggleInternalUI
+-- StarterGui.Synaptics.OptionMenu.ToggleInternalUI
 G2L["79"] = Instance.new("TextButton", G2L["72"]);
 G2L["79"]["TextWrapped"] = true;
 G2L["79"]["ZIndex"] = 6;
@@ -1251,7 +1246,7 @@ G2L["79"]["Name"] = [[ToggleInternalUI]];
 G2L["79"]["Text"] = [[x]];
 G2L["79"]["Position"] = UDim2.new(0.24308274686336517, 0, 3.032419204711914, 0);
 
--- StarterGui.SynapseX.OptionMenu.ToggleTopMost
+-- StarterGui.Synaptics.OptionMenu.ToggleTopMost
 G2L["7a"] = Instance.new("TextButton", G2L["72"]);
 G2L["7a"]["TextWrapped"] = true;
 G2L["7a"]["ZIndex"] = 6;
@@ -1265,7 +1260,7 @@ G2L["7a"]["Name"] = [[ToggleTopMost]];
 G2L["7a"]["Text"] = [[x]];
 G2L["7a"]["Position"] = UDim2.new(0.24308274686336517, 0, 3.774354934692383, 0);
 
--- StarterGui.SynapseX.OptionMenu.Icon
+-- StarterGui.Synaptics.OptionMenu.Icon
 G2L["7b"] = Instance.new("ImageLabel", G2L["72"]);
 G2L["7b"]["ZIndex"] = 6;
 G2L["7b"]["BorderSizePixel"] = 0;
@@ -1276,7 +1271,7 @@ G2L["7b"]["Name"] = [[Icon]];
 G2L["7b"]["BackgroundTransparency"] = 1;
 G2L["7b"]["Position"] = UDim2.new(0.014999999664723873, 0, 0.057999998331069946, 0);
 
--- StarterGui.SynapseX.OptionMenu.ToggleAutoExec
+-- StarterGui.Synaptics.OptionMenu.ToggleAutoExec
 G2L["7c"] = Instance.new("TextButton", G2L["72"]);
 G2L["7c"]["TextWrapped"] = true;
 G2L["7c"]["ZIndex"] = 6;
@@ -1290,7 +1285,7 @@ G2L["7c"]["Name"] = [[ToggleAutoExec]];
 G2L["7c"]["Text"] = [[]];
 G2L["7c"]["Position"] = UDim2.new(0.24308274686336517, 0, 2.2904839515686035, 0);
 
--- StarterGui.SynapseX.OptionMenu.AutoExec
+-- StarterGui.Synaptics.OptionMenu.AutoExec
 G2L["7d"] = Instance.new("TextLabel", G2L["72"]);
 G2L["7d"]["ZIndex"] = 6;
 G2L["7d"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
@@ -1304,7 +1299,7 @@ G2L["7d"]["Name"] = [[AutoExec]];
 G2L["7d"]["BackgroundTransparency"] = 1;
 G2L["7d"]["Position"] = UDim2.new(0.35585591197013855, 0, 2.258225917816162, 0);
 
--- StarterGui.SynapseX.OptionMenu.Buttons
+-- StarterGui.Synaptics.OptionMenu.Buttons
 G2L["7e"] = Instance.new("Frame", G2L["72"]);
 G2L["7e"]["ZIndex"] = 6;
 G2L["7e"]["BorderSizePixel"] = 0;
@@ -1314,12 +1309,12 @@ G2L["7e"]["Size"] = UDim2.new(0, 176, 0, 58);
 G2L["7e"]["Position"] = UDim2.new(0.05500003695487976, 0, 4.516129493713379, 0);
 G2L["7e"]["Name"] = [[Buttons]];
 
--- StarterGui.SynapseX.OptionMenu.Buttons.UIListLayout
+-- StarterGui.Synaptics.OptionMenu.Buttons.UIListLayout
 G2L["7f"] = Instance.new("UIListLayout", G2L["7e"]);
 G2L["7f"]["Padding"] = UDim.new(0, 5);
 G2L["7f"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
 
--- StarterGui.SynapseX.OptionMenu.Buttons.Rejoin
+-- StarterGui.Synaptics.OptionMenu.Buttons.Rejoin
 G2L["80"] = Instance.new("TextButton", G2L["7e"]);
 G2L["80"]["ZIndex"] = 6;
 G2L["80"]["BorderSizePixel"] = 0;
@@ -1334,7 +1329,7 @@ G2L["80"]["BorderColor3"] = Color3.fromRGB(0, 231, 255);
 G2L["80"]["Text"] = [[Rejoin]];
 G2L["80"]["Position"] = UDim2.new(0.054999999701976776, 0, 5.838741779327393, 0);
 
--- StarterGui.SynapseX.OptionMenu.Buttons.Discord
+-- StarterGui.Synaptics.OptionMenu.Buttons.Discord
 G2L["81"] = Instance.new("TextButton", G2L["7e"]);
 G2L["81"]["ZIndex"] = 6;
 G2L["81"]["BorderSizePixel"] = 0;
@@ -1348,7 +1343,7 @@ G2L["81"]["BorderColor3"] = Color3.fromRGB(0, 231, 255);
 G2L["81"]["Text"] = [[Discord]];
 G2L["81"]["Position"] = UDim2.new(0.054999999701976776, 0, 5.838741779327393, 0);
 
--- StarterGui.SynapseX.OptionMenu.MainFrame
+-- StarterGui.Synaptics.OptionMenu.MainFrame
 G2L["82"] = Instance.new("Frame", G2L["72"]);
 G2L["82"]["ZIndex"] = 5;
 G2L["82"]["BorderSizePixel"] = 0;
@@ -1357,23 +1352,23 @@ G2L["82"]["Size"] = UDim2.new(0, 199, 0, 211);
 G2L["82"]["Position"] = UDim2.new(0, 0, 0.988335907459259, 0);
 G2L["82"]["Name"] = [[MainFrame]];
 
--- StarterGui.SynapseX.OptionMenu.Optionhandler
+-- StarterGui.Synaptics.OptionMenu.Optionhandler
 G2L["83"] = Instance.new("LocalScript", G2L["72"]);
 G2L["83"]["Name"] = [[Optionhandler]];
 
--- StarterGui.SynapseX.GetSavedScripts
+-- StarterGui.Synaptics.GetSavedScripts
 G2L["84"] = Instance.new("LocalScript", G2L["1"]);
 G2L["84"]["Name"] = [[GetSavedScripts]];
 
--- StarterGui.SynapseX.Injected
+-- StarterGui.Synaptics.Injected
 G2L["85"] = Instance.new("BoolValue", G2L["1"]);
 G2L["85"]["Name"] = [[Injected]];
 
--- StarterGui.SynapseX.Module
+-- StarterGui.Synaptics.Module
 G2L["86"] = Instance.new("ModuleScript", G2L["1"]);
 G2L["86"]["Name"] = [[Module]];
 
--- StarterGui.SynapseX.Module.RClick
+-- StarterGui.Synaptics.Module.RClick
 G2L["87"] = Instance.new("Frame", G2L["86"]);
 G2L["87"]["ZIndex"] = 7;
 G2L["87"]["BackgroundColor3"] = Color3.fromRGB(44, 44, 44);
@@ -1383,7 +1378,7 @@ G2L["87"]["Position"] = UDim2.new(-0.0146878557279706, 0, 1.0666667222976685, 0)
 G2L["87"]["Visible"] = false;
 G2L["87"]["Name"] = [[RClick]];
 
--- StarterGui.SynapseX.Module.RClick.Execute
+-- StarterGui.Synaptics.Module.RClick.Execute
 G2L["88"] = Instance.new("TextButton", G2L["87"]);
 G2L["88"]["ZIndex"] = 7;
 G2L["88"]["BackgroundColor3"] = Color3.fromRGB(44, 44, 44);
@@ -1396,7 +1391,7 @@ G2L["88"]["BorderColor3"] = Color3.fromRGB(119, 119, 119);
 G2L["88"]["Text"] = [[Execute]];
 G2L["88"]["Position"] = UDim2.new(0.005026959348469973, 0, 0, 0);
 
--- StarterGui.SynapseX.Module.RClick.Load
+-- StarterGui.Synaptics.Module.RClick.Load
 G2L["89"] = Instance.new("TextButton", G2L["87"]);
 G2L["89"]["ZIndex"] = 7;
 G2L["89"]["BackgroundColor3"] = Color3.fromRGB(44, 44, 44);
@@ -1409,7 +1404,7 @@ G2L["89"]["BorderColor3"] = Color3.fromRGB(119, 119, 119);
 G2L["89"]["Text"] = [[Load into Editor]];
 G2L["89"]["Position"] = UDim2.new(0.005026959348469973, 0, 0.3174603283405304, 0);
 
--- StarterGui.SynapseX.Module.RClick.Delete
+-- StarterGui.Synaptics.Module.RClick.Delete
 G2L["8a"] = Instance.new("TextButton", G2L["87"]);
 G2L["8a"]["ZIndex"] = 7;
 G2L["8a"]["BackgroundColor3"] = Color3.fromRGB(44, 44, 44);
@@ -1422,7 +1417,7 @@ G2L["8a"]["BorderColor3"] = Color3.fromRGB(119, 119, 119);
 G2L["8a"]["Text"] = [[Delete]];
 G2L["8a"]["Position"] = UDim2.new(0.005026959348469973, 0, 0.6666666865348816, 0);
 
--- StarterGui.SynapseX.OpenScript
+-- StarterGui.Synaptics.OpenScript
 G2L["8b"] = Instance.new("Frame", G2L["1"]);
 G2L["8b"]["Active"] = true;
 G2L["8b"]["ZIndex"] = 10;
@@ -1433,7 +1428,7 @@ G2L["8b"]["Position"] = UDim2.new(0.2866109609603882, 0, 0.5302865505218506, 0);
 G2L["8b"]["Visible"] = false;
 G2L["8b"]["Name"] = [[OpenScript]];
 
--- StarterGui.SynapseX.OpenScript.scriptname
+-- StarterGui.Synaptics.OpenScript.scriptname
 G2L["8c"] = Instance.new("TextBox", G2L["8b"]);
 G2L["8c"]["ZIndex"] = 11;
 G2L["8c"]["BorderSizePixel"] = 0;
@@ -1447,7 +1442,7 @@ G2L["8c"]["Text"] = [[]];
 G2L["8c"]["Position"] = UDim2.new(0, 3, 0, 32);
 G2L["8c"]["Name"] = [[scriptname]];
 
--- StarterGui.SynapseX.OpenScript.savescript
+-- StarterGui.Synaptics.OpenScript.savescript
 G2L["8d"] = Instance.new("TextButton", G2L["8b"]);
 G2L["8d"]["ZIndex"] = 11;
 G2L["8d"]["BorderSizePixel"] = 0;
@@ -1460,7 +1455,7 @@ G2L["8d"]["Name"] = [[savescript]];
 G2L["8d"]["Text"] = [[Open FIle]];
 G2L["8d"]["Position"] = UDim2.new(0, 3, 0, 56);
 
--- StarterGui.SynapseX.OpenScript.Icon
+-- StarterGui.Synaptics.OpenScript.Icon
 G2L["8e"] = Instance.new("ImageLabel", G2L["8b"]);
 G2L["8e"]["ZIndex"] = 11;
 G2L["8e"]["BorderSizePixel"] = 0;
@@ -1471,11 +1466,11 @@ G2L["8e"]["Name"] = [[Icon]];
 G2L["8e"]["BackgroundTransparency"] = 1;
 G2L["8e"]["Position"] = UDim2.new(0.008999999612569809, 0, 0.05000000074505806, 0);
 
--- StarterGui.SynapseX.OpenScript.Icon.UIAspectRatioConstraint
+-- StarterGui.Synaptics.OpenScript.Icon.UIAspectRatioConstraint
 G2L["8f"] = Instance.new("UIAspectRatioConstraint", G2L["8e"]);
 G2L["8f"]["AspectRatio"] = 0.8846153616905212;
 
--- StarterGui.SynapseX.OpenScript.Title
+-- StarterGui.Synaptics.OpenScript.Title
 G2L["90"] = Instance.new("TextLabel", G2L["8b"]);
 G2L["90"]["TextWrapped"] = true;
 G2L["90"]["ZIndex"] = 11;
@@ -1486,11 +1481,11 @@ G2L["90"]["TextSize"] = 15;
 G2L["90"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["90"]["Size"] = UDim2.new(0, 322, 0, 30);
 G2L["90"]["Active"] = true;
-G2L["90"]["Text"] = [[Synapse X - Open FIle]];
+G2L["90"]["Text"] = [[Synaptics - Open FIle]];
 G2L["90"]["Name"] = [[Title]];
 G2L["90"]["BackgroundTransparency"] = 1;
 
--- StarterGui.SynapseX.OpenScript.Close
+-- StarterGui.Synaptics.OpenScript.Close
 G2L["91"] = Instance.new("TextButton", G2L["8b"]);
 G2L["91"]["TextWrapped"] = true;
 G2L["91"]["ZIndex"] = 12;
@@ -1505,23 +1500,23 @@ G2L["91"]["Text"] = [[x]];
 G2L["91"]["Position"] = UDim2.new(0.9130434989929199, 0, 0.024690981954336166, 0);
 G2L["91"]["BackgroundTransparency"] = 1;
 
--- StarterGui.SynapseX.OpenScript.Handler
+-- StarterGui.Synaptics.OpenScript.Handler
 G2L["92"] = Instance.new("LocalScript", G2L["8b"]);
 G2L["92"]["Name"] = [[Handler]];
 
--- StarterGui.SynapseX.SetDraggable
+-- StarterGui.Synaptics.SetDraggable
 G2L["93"] = Instance.new("LocalScript", G2L["1"]);
 G2L["93"]["Name"] = [[SetDraggable]];
 
--- StarterGui.SynapseX.Highlighter
+-- StarterGui.Synaptics.Highlighter
 G2L["94"] = Instance.new("ModuleScript", G2L["1"]);
 G2L["94"]["Name"] = [[Highlighter]];
 
--- StarterGui.SynapseX.Highlighter.lexer
+-- StarterGui.Synaptics.Highlighter.lexer
 G2L["95"] = Instance.new("ModuleScript", G2L["94"]);
 G2L["95"]["Name"] = [[lexer]];
 
--- StarterGui.SynapseX.Highlighter.lexer.language
+-- StarterGui.Synaptics.Highlighter.lexer.language
 G2L["96"] = Instance.new("ModuleScript", G2L["95"]);
 G2L["96"]["Name"] = [[language]];
 
@@ -2821,7 +2816,7 @@ return language
 
 end;
 };
--- StarterGui.SynapseX.Main.ScriptTab.ScriptTabHandler
+-- StarterGui.Synaptics.Main.ScriptTab.ScriptTabHandler
 local function C_44()
 local script = G2L["44"];
 	local function AddTab()
@@ -3033,11 +3028,11 @@ local script = G2L["44"];
 	AddTab()
 end;
 task.spawn(C_44);
--- StarterGui.SynapseX.Main.ButtonsHandler
+-- StarterGui.Synaptics.Main.ButtonsHandler
 local function C_49()
 	local script = G2L["49"];
 	local buttons = script.Parent
-	local title = buttons.TitleSynapse
+	local title = buttons.TitleSynaptics
 	local injected =  script.Parent.Parent.Injected.Value
 
 
@@ -3062,22 +3057,22 @@ local function C_49()
 	end)
 	buttons.Attach.MouseButton1Up:Connect(function()
 		if not injected then
-			title.Text = "Synapse X - "..synversion.." (checking...)"
+			title.Text = "Synaptics - "..synversion.." (checking...)"
 			task.wait(0.8)
-			title.Text = "Synapse X - "..synversion.." (injecting...)"
+			title.Text = "Synaptics - "..synversion.." (injecting...)"
 			task.wait(2.3)
-			title.Text = "Synapse X - "..synversion.." (checking whitelist...)"
+			title.Text = "Synaptics - "..synversion.." (checking whitelist...)"
 			task.wait(1.6)
-			title.Text = "Synapse X - "..synversion.." (scanning...)"
+			title.Text = "Synaptics - "..synversion.." (scanning...)"
 			task.wait(1.3)
-			title.Text = "Synapse X - "..synversion.." (ready!)"
+			title.Text = "Synaptics - "..synversion.." (ready!)"
 			injected = true
 			task.wait(1)
-			title.Text = "Synapse X - "..synversion
+			title.Text = "Synaptics - "..synversion
 		else
-			title.Text = "Synapse X - "..synversion.." (already injected!)"
+			title.Text = "Synaptics - "..synversion.." (already injected!)"
 			task.wait(1)
-			title.Text = "Synapse X - "..synversion
+			title.Text = "Synaptics - "..synversion
 		end
 	end)
 
@@ -3114,7 +3109,7 @@ local function C_49()
 	end)
 end;
 task.spawn(C_49);
--- StarterGui.SynapseX.SaveScript.Handler
+-- StarterGui.Synaptics.SaveScript.Handler
 local function C_51()
 	local script = G2L["51"];
 	script.Parent.savescript.MouseButton1Up:Connect(function()
@@ -3132,7 +3127,7 @@ local function C_51()
 	end)
 end;
 task.spawn(C_51);
--- StarterGui.SynapseX.ScriptHubMenu.ScriptHubHandler
+-- StarterGui.Synaptics.ScriptHubMenu.ScriptHubHandler
 local function C_71()
 	local script = G2L["71"];
 	local yes = script.Parent
@@ -3145,7 +3140,7 @@ local function C_71()
 			end
 		end
 		script.Parent.Description.Text = [[A version of the popular Dex explorer with
-		patches specifically for Synapse X.]]
+		patches specifically for Synaptics.]]
 	end)
 
 	yes.Background.ScrollingFrame.RemoteSpy.MouseButton1Up:Connect(function()
@@ -3207,7 +3202,7 @@ local function C_71()
 	end)
 end;
 task.spawn(C_71);
--- StarterGui.SynapseX.OptionMenu.Optionhandler
+-- StarterGui.Synaptics.OptionMenu.Optionhandler
 local function C_83()
 	local script = G2L["83"];
 	local stuff  =script.Parent
@@ -3291,7 +3286,7 @@ local function C_83()
 	end)
 end;
 task.spawn(C_83);
--- StarterGui.SynapseX.GetSavedScripts
+-- StarterGui.Synaptics.GetSavedScripts
 local function C_84()
 
 	local script = G2L["84"];
@@ -3308,7 +3303,7 @@ local function C_84()
 	end
 end;
 task.spawn(C_84);
--- StarterGui.SynapseX.OpenScript.Handler
+-- StarterGui.Synaptics.OpenScript.Handler
 local function C_92()
 	local script = G2L["92"];
 	script.Parent.savescript.MouseButton1Up:Connect(function()
@@ -3319,9 +3314,9 @@ local function C_92()
 			script.Parent.scriptname.Text = ''
 			module:AddTab(script.Parent.scriptname.Text, readfile(a))
 		else
-			script.Parent.Title.Text = "Synapse X - Open File (File not found!)"
+			script.Parent.Title.Text = "Synaptics - Open File (File not found!)"
 			task.wait(1)
-			script.Parent.Title.Text = "Synapse X - Open File"
+			script.Parent.Title.Text = "Synaptics - Open File"
 		end
 	end)
 
@@ -3331,7 +3326,7 @@ local function C_92()
 	end)
 end;
 task.spawn(C_92);
--- StarterGui.SynapseX.SetDraggable
+-- StarterGui.Synaptics.SetDraggable
 local function C_93()
 	local script = G2L["93"];
 	local yes =  script.Parent
