@@ -1,6 +1,5 @@
 --[[Setting Executor and Identity Values]]--
-local synversion = "0.1.0"
-function identifyexecutor() return 'Synaptics', synversion end
+function identifyexecutor() return 'Synaptics', 'BETA' end
 function getexecutorname() return identifyexecutor() end
 function executorname() return identifyexecutor() end
 function executorversion() return select(identifyexecutor(), 2) end
@@ -8,6 +7,7 @@ function getexecutorversion() return executorversion() end
 function printidentity() print("Current identity is 8") return end
 function getthreadidentity() return '8' end
 function getthreadcontext() return getthreadidentity() end
+local synversion = "0.1.0"
 
 -- Instances: 150 | Scripts: 8 | Modules: 4
 local G2L = {};
