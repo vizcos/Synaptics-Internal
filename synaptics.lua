@@ -298,7 +298,7 @@ G2L["1e"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]
 G2L["1e"]["TextSize"] = 15;
 G2L["1e"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["1e"]["Size"] = UDim2.new(0, 646, 0, 27);
-G2L["1e"]["Text"] = "Synaptics - "..synversion.." - we love you, clip.";
+G2L["1e"]["Text"] = "Synaptics - "..synversion;
 G2L["1e"]["Name"] = [[TitleSynaptics]];
 G2L["1e"]["BackgroundTransparency"] = 1;
 
