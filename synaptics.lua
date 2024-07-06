@@ -1,4 +1,3 @@
-pcall(function() game.CoreGui["Synaptics"]:Destroy() end)
 function identifyexecutor() return 'Synaptics', 'BETA' end
 function getexecutorname() return identifyexecutor() end
 function executorname() return identifyexecutor() end
