@@ -1,5 +1,13 @@
 pcall(function() game.CoreGui["Synaptics"]:Destroy() end)
-local function identifyexecutor() return 'Synaptics', 'BETA' end
+function identifyexecutor() return 'Synaptics', 'BETA' end
+function getexecutorname() return identifyexecutor() end
+function executorname() return identifyexecutor() end
+function executorversion() return select(identifyexecutor(), 2) end
+function getexecutorversion() return executorversion() end
+function printidentity() print("Current identity is 8") return end
+function getthreadidentity() return '8' end
+function getthreadcontext() return getthreadidentity() end
+local synversion = "0.1.0"
 local SynapseXreal = Instance.new("ScreenGui")
 local MainFrame = Instance.new("Frame")
 local bar = Instance.new("Frame")
@@ -53,7 +61,7 @@ local injected = false
 
 --Properties:
 
-SynapseXreal.Name = "Synapse X"
+SynapseXreal.Name = "Synaptics"
 SynapseXreal.Parent = game.CoreGui
 SynapseXreal.ResetOnSpawn = false
 
@@ -74,7 +82,7 @@ bar.BorderSizePixel = 0
 bar.Position = UDim2.new(-0, 0, -0.00296382909, 0)
 bar.Size = UDim2.new(0, 689, 0, 25)
 
-synminbutt.Name = "synminbutt"
+synminbutt.Name = "synaptic"
 synminbutt.Parent = SynapseXreal
 synminbutt.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 synminbutt.BackgroundTransparency = 1.000
@@ -119,8 +127,8 @@ Mini.TextColor3 = Color3.fromRGB(255, 255, 255)
 Mini.TextSize = 14.000
 Mini.MouseButton1Click:Connect(function()
     game.StarterGui:SetCore("SendNotification", {
-        Title = "Synapse X";
-        Text = "Synapse X minimized.";
+        Title = "Synaptics";
+        Text = "Synaptics Minimised.";
         Duration = 2;
     })
     synminbutt.Visible = true
@@ -141,8 +149,8 @@ Min.TextColor3 = Color3.fromRGB(255, 255, 255)
 Min.TextSize = 14.000
 Min.MouseButton1Click:Connect(function()
     game.StarterGui:SetCore("SendNotification", {
-        Title = "Synapse X";
-        Text = "Synapse X hide. Press F6 to back.";
+        Title = "Synaptics";
+        Text = "Synaptics hidden. Press F6 to reveal GUI.";
         Duration = 2;
     })
     MainFrame.Visible = false
@@ -323,7 +331,7 @@ title.BackgroundTransparency = 1.000
 title.Position = UDim2.new(0.330062926, 0, 0.00625000056, 0)
 title.Size = UDim2.new(0, 200, 0, 22)
 title.Font = Enum.Font.SourceSans
-title.Text = "Synapse X - vRBX (Modded by CremiWorld)"
+title.Text = "Synaptics - vRBX (Modded by CremiWorld)"
 title.TextColor3 = Color3.fromRGB(255, 255, 255)
 title.TextSize = 16.000
 
@@ -350,7 +358,7 @@ execute.MouseButton1Click:Connect(function()
         loadstring(Source.Text)()
     end
     if injected == false then
-        title.Text = "Synapse X - (Not injected! Press attach)"
+        title.Text = "Synaptics - (Not injected! Press attach)"
     end
 end)
 
@@ -420,22 +428,22 @@ Attach.TextColor3 = Color3.fromRGB(255, 255, 255)
 Attach.TextSize = 14.000
 Attach.MouseButton1Click:Connect(function()
     if injected == true then
-        title.Text = "Synapse X - (Already injected!)"
+        title.Text = "Synaptics - (Already injected!)"
         wait(1)
-        title.Text = "Synapse X - vRBX (Modded by CremiWorld)"
+        title.Text = "Synaptics - vRBX (Modded by CremiWorld)"
     end
     if injected == false then
-        title.Text = "Synapse X - (Checking...)"
+        title.Text = "Synaptics - (Checking...)"
         wait(0.1)
-        title.Text = "Synapse X - (Injecting...)"
+        title.Text = "Synaptics - (Injecting...)"
         wait(1.5)
-        title.Text = "Synapse X - (Checking Whitelist...)"
+        title.Text = "Synaptics - (Checking Whitelist...)"
         wait(0.8)
-        title.Text = "Synapse X - (Scanning...)"
+        title.Text = "Synaptics - (Scanning...)"
         wait(0.3)
-        title.Text = "Synapse X - (Ready!)"
+        title.Text = "Synaptics - (Ready!)"
         wait(0.5)
-        title.Text = "Synapse X - vRBX (Modded by CremiWorld)"
+        title.Text = "Synaptics - vRBX (Modded by CremiWorld)"
         injected = true
     end
 end)
@@ -605,7 +613,7 @@ title_3.BackgroundTransparency = 1.000
 title_3.Position = UDim2.new(0.161097407, 0, -0.000307376496, 0)
 title_3.Size = UDim2.new(0, 200, 0, 22)
 title_3.Font = Enum.Font.SourceSans
-title_3.Text = "Synapse X - Script Hub"
+title_3.Text = "Synaptics - Script Hub"
 title_3.TextColor3 = Color3.fromRGB(255, 255, 255)
 title_3.TextSize = 16.000
 title_3.ZIndex = 110
@@ -683,7 +691,7 @@ title_5.BackgroundTransparency = 1.000
 title_5.Position = UDim2.new(0.161097407, 0, -0.000307376496, 0)
 title_5.Size = UDim2.new(0, 200, 0, 22)
 title_5.Font = Enum.Font.SourceSans
-title_5.Text = "Synapse X - Options Menu"
+title_5.Text = "Synaptics - Options Menu"
 title_5.TextColor3 = Color3.fromRGB(255, 255, 255)
 title_5.TextSize = 16.000
 title_5.ZIndex = 110
@@ -706,19 +714,19 @@ synapsex3.BorderSizePixel = 0
 synapsex3.Position = UDim2.new(0.30757343, 0, 0.391106505, 0)
 synapsex3.Size = UDim2.new(0, 123, 0, 30)
 synapsex3.Font = Enum.Font.Arial
-synapsex3.Text = "Synapse X v3"
+synapsex3.Text = "Synaptics v3"
 synapsex3.TextColor3 = Color3.fromRGB(255, 255, 255)
 synapsex3.TextSize = 14.000
 synapsex3.ZIndex = 110
 synapsex3.MouseButton1Click:Connect(function()
     game.StarterGui:SetCore("SendNotification", {
-        Title = "Synapse X";
-        Text = "Synapse X v3 coming soon.";
+        Title = "Synaptics";
+        Text = "Synaptics v3 coming soon.";
         Duration = 1;
     })
     synapsex3.Text = "Coming soon."
     wait(1)
-    synapsex3.Text = "Synapse X v3"
+    synapsex3.Text = "Synaptics v3"
 end)
 
 -- Scripts:
@@ -1216,7 +1224,7 @@ while true do
             descri.Text = ""
         end
         if scriptselected == "dex" then
-            descri.Text = "A version of the popular Dex explorer with patches specifically for Synapse X."
+            descri.Text = "A version of the popular Dex explorer with patches specifically for Synaptics."
         end
         if scriptselected == "esp" then
             descri.Text = "ESP Made by ic3w0lf using the Drawing API."
