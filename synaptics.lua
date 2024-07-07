@@ -1,6 +1,6 @@
 -- Synaptics Team! Don't skid...
 
-local synversion = "BETA"
+local synversion = "BETA - Brought to you by Synaptics Team"
 function identifyexecutor() return 'Synaptics', 'BETA' end
 function getexecutorname() return identifyexecutor() end
 function executorname() return identifyexecutor() end
