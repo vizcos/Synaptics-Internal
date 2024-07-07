@@ -9,7 +9,6 @@ function getexecutorversion() return executorversion() end
 function printidentity() print("Current identity is 8") return end
 function getthreadidentity() return '8' end
 function getthreadcontext() return getthreadidentity() end
-local synversion = "0.1.0"
 
 -- Instances: 150 | Scripts: 8 | 
 
